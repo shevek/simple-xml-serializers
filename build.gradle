@@ -1,0 +1,51 @@
+ext.githubProjectName = rootProject.name
+
+buildscript {
+	apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+apply from: file('gradle/convention.gradle')
+apply from: file('gradle/github.gradle')
+apply from: file('gradle/nexus.gradle')
+apply from: file('gradle/check.gradle')
+apply from: file('gradle/license.gradle')
+
+subprojects {
+	group = "org.anarres.simplexml.serializers"
+}
+
+project(':simplexml-serializers-jdk') {
+	dependencies {
+		compile 'org.simpleframework:simple-xml:2.7.1'
+		compile 'com.google.guava:guava:18.0'
+		compile 'com.google.auto.service:auto-service:1.0-rc2'
+		compile 'org.anarres.typeserializer:typeserializer-simplexml:1.0.3'
+
+		testCompile project(':simplexml-serializers-test')
+	}
+}
+
+project(':simplexml-serializers-thrift') {
+	dependencies {
+		compile project(':simplexml-serializers-jdk')
+		compile 'org.apache.thrift:libthrift:0.9.1'
+
+		testCompile project(':simplexml-serializers-test')
+	}
+}
+
+project(':simplexml-serializers-dhcp4j') {
+	dependencies {
+		compile project(':simplexml-serializers-jdk')
+		compile 'org.anarres.dhcp:dhcp-protocol:1.0.5'
+
+		testCompile project(':simplexml-serializers-test')
+	}
+}
+
+project(':simplexml-serializers-test') {
+	dependencies {
+		compile project(':simplexml-serializers-jdk')
+		compile 'junit:junit:4.11'
+	}
+}
