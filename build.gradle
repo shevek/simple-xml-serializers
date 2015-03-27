@@ -14,38 +14,39 @@ subprojects {
 	group = "org.anarres.simplexml.serializers"
 }
 
-project(':simplexml-serializers-jdk') {
+project(':simple-xml-serializers-jdk') {
 	dependencies {
-		compile 'org.simpleframework:simple-xml:2.7.1'
+		// compile 'org.simpleframework:simple-xml:2.7.1'
+		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P1"
 		compile 'com.google.guava:guava:18.0'
 		compile 'com.google.auto.service:auto-service:1.0-rc2'
 		compile 'org.anarres.typeserializer:typeserializer-simplexml:1.0.3'
 
-		testCompile project(':simplexml-serializers-test')
+		testCompile project(':simple-xml-serializers-test')
 	}
 }
 
-project(':simplexml-serializers-thrift') {
+project(':simple-xml-serializers-thrift') {
 	dependencies {
-		compile project(':simplexml-serializers-jdk')
+		compile project(':simple-xml-serializers-jdk')
 		compile 'org.apache.thrift:libthrift:0.9.1'
 
-		testCompile project(':simplexml-serializers-test')
+		testCompile project(':simple-xml-serializers-test')
 	}
 }
 
-project(':simplexml-serializers-dhcp4j') {
+project(':simple-xml-serializers-dhcp4j') {
 	dependencies {
-		compile project(':simplexml-serializers-jdk')
+		compile project(':simple-xml-serializers-jdk')
 		compile 'org.anarres.dhcp:dhcp-protocol:1.0.5'
 
-		testCompile project(':simplexml-serializers-test')
+		testCompile project(':simple-xml-serializers-test')
 	}
 }
 
-project(':simplexml-serializers-test') {
+project(':simple-xml-serializers-test') {
 	dependencies {
-		compile project(':simplexml-serializers-jdk')
+		compile project(':simple-xml-serializers-jdk')
 		compile 'junit:junit:4.11'
 	}
 }

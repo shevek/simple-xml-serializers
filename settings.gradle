@@ -1,5 +1,5 @@
-rootProject.name='simplexml-serializers'
-include 'simplexml-serializers-jdk',
-		'simplexml-serializers-thrift',
-		'simplexml-serializers-dhcp4j',
-		'simplexml-serializers-test'
+rootProject.name='simple-xml-serializers'
+include 'simple-xml-serializers-jdk',
+		'simple-xml-serializers-thrift',
+		'simple-xml-serializers-dhcp4j',
+		'simple-xml-serializers-test'

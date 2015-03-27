@@ -1,4 +1,4 @@
-simplexml-serializers
+simple-xml-serializers
 =====================
 
 A set of extra serializers and plugins for
