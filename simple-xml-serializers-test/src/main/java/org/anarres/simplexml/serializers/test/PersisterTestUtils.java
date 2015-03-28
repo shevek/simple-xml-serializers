@@ -27,9 +27,20 @@ public class PersisterTestUtils {
         return (T) testSerialization((Class) in.getClass(), in);
     }
 
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    @Nonnull
+    public static <T> T testSerialization(@Nonnull Persister persister, @Nonnull T in) throws IOException {
+        return (T) testSerialization(persister, (Class) in.getClass(), in);
+    }
+
     @Nonnull
     public static <T> T testSerialization(@Nonnull Class<T> type, @Nonnull T in) throws IOException {
         Persister persister = PersisterFactory.newDefaultPersister();
+        return testSerialization(persister, type, in);
+    }
+
+    @Nonnull
+    public static <T> T testSerialization(@Nonnull Persister persister, @Nonnull Class<T> type, @Nonnull T in) throws IOException {
 
         LOG.info("Testing serialization of " + type);
         LOG.info("In:  " + in);

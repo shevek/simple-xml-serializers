@@ -44,9 +44,20 @@ project(':simple-xml-serializers-dhcp4j') {
 	}
 }
 
+project(':simple-xml-serializers-spring') {
+	dependencies {
+		compile project(':simple-xml-serializers-jdk')
+		def springVersion = "4.1.5.RELEASE"
+		compile "org.springframework:spring-context:$springVersion"
+
+		testCompile project(':simple-xml-serializers-test')
+		testCompile "org.springframework:spring-test:$springVersion"
+	}
+}
+
 project(':simple-xml-serializers-test') {
 	dependencies {
 		compile project(':simple-xml-serializers-jdk')
-		compile 'junit:junit:4.11'
+		compile 'junit:junit:4.12'
 	}
 }
