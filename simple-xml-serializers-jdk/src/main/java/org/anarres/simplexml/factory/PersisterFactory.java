@@ -66,7 +66,8 @@ public class PersisterFactory {
                     return TypeConverter.getInstance();
                 else if (Charset.class.isAssignableFrom(type))
                     return super.lookup(Charset.class);
-                else if (Serializable.class.isAssignableFrom(type)) // Includes Throwable.
+                // This cannot be Serializable because that would cause ArrayList etc to get b0rked.
+                else if (Throwable.class.isAssignableFrom(type)) // Includes Throwable.
                     return super.lookup(Serializable.class);
                 // else if (TBase.class.isAssignableFrom(type)) return super.lookup(TBase.class);
                 // bind(type, converter);
