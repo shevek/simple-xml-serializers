@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.06060606060606061" branch-rate="0.0" lines-covered="2" lines-valid="33" branches-covered="0" branches-valid="4" complexity="2.125" version="2.0.3" timestamp="1427652885091">
+<coverage line-rate="0.06060606060606061" branch-rate="0.0" lines-covered="2" lines-valid="33" branches-covered="0" branches-valid="4" complexity="2.125" version="2.0.3" timestamp="1427653805584">
 	<sources>
 		<source>/home/shevek/java/simple-xml-serializers/simple-xml-serializers-thrift/src/main/java</source>
 	</sources>
