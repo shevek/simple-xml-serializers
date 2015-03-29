@@ -23,7 +23,7 @@ import org.simpleframework.xml.stream.OutputNode;
 @AutoService(ConverterFactory.class)
 public class SerializableConverter extends AbstractConverter implements Converter<Serializable>, ConverterFactory {
 
-    public static class Inner {
+    private static class Inner {
 
         private static final SerializableConverter INSTANCE = new SerializableConverter();
     }

@@ -27,7 +27,7 @@ public class JavaPersistenceTest {
     @Root
     public static class IntArray {
 
-        private int[] values;
+        private final int[] values;
 
         @SuppressWarnings("EI_EXPOSE_REP2")
         public IntArray(@ElementArray(name = "values") int[] values) {

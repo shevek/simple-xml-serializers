@@ -15,7 +15,6 @@ import java.util.Map;
 import java.util.ServiceLoader;
 import javax.annotation.Nonnull;
 import org.anarres.simplexml.serializers.common.ConverterFactory;
-// import org.anarres.simplexml.serializers.common.SuppressWarnings;
 import org.anarres.simplexml.serializers.common.TransformFactory;
 import org.anarres.simplexml.serializers.jdk.SerializableTransform;
 import org.anarres.typeserializer.simplexml.TypeConverter;
@@ -43,7 +42,7 @@ public class PersisterFactory {
     public static final String ID = "_xid";
     public static final String REF = "_xref";
 
-    private List<ConverterFactory> converterFactories = new ArrayList<ConverterFactory>();
+    private final List<ConverterFactory> converterFactories = new ArrayList<ConverterFactory>();
 
     public void addConverters(@Nonnull Iterable<? extends ConverterFactory> converterFactories) {
         Iterables.addAll(this.converterFactories, converterFactories);
@@ -92,7 +91,7 @@ public class PersisterFactory {
         }
     }
 
-    private List<TransformFactory> transformFactories = new ArrayList<TransformFactory>();
+    private final List<TransformFactory> transformFactories = new ArrayList<TransformFactory>();
 
     public void addTransforms(@Nonnull Iterable<? extends TransformFactory> transformFactories) {
         Iterables.addAll(this.transformFactories, transformFactories);

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.compilerworks.plugin.cdh42.common.xml;
+package org.anarres.simplexml.serializers.thrift;
 
 import org.anarres.simplexml.serializers.test.PersisterTestUtils;
 import org.slf4j.Logger;

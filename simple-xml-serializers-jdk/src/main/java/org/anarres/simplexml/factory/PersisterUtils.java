@@ -36,6 +36,9 @@ public class PersisterUtils {
 
     private static final Logger LOG = LoggerFactory.getLogger(PersisterUtils.class);
 
+    private PersisterUtils() {
+    }
+
     @Nonnull
     public static String toString(@Nonnull byte[] data, @Nonnegative int start, @Nonnegative int len) {
         StringBuilder buf = new StringBuilder();

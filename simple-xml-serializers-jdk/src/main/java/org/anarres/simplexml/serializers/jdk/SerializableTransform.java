@@ -32,7 +32,7 @@ public class SerializableTransform implements Transform<Serializable>, Transform
 
     private static final boolean COMPRESS = false;
 
-    public static class Inner {
+    private static class Inner {
 
         private static final SerializableTransform INSTANCE = new SerializableTransform();
     }
