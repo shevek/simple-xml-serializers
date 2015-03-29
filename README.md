@@ -4,6 +4,11 @@ simple-xml-serializers
 A set of extra serializers and plugins for
 [SimpleXML](http://simple.sourceforge.net/).
 
+In order to use this code, you will want to use the [patched version
+of SimpleXML](http://github.com/shevek/simple-xml). If you consume
+this code via Gradle, Maven, etc, it will pull in the patched version
+automatically.
+
 Usage
 -----
 
@@ -33,6 +38,8 @@ Persister persister = persisterFactory.newPersister();
 
 ### For Testing
 
+If you are writing beans which are to be serialized using SimpleXML,
+you will want to test their serializability in your unit test suite.
 Depend on the simple-xml-serializers-test module, and use
 ```
 MyBean in = ...
@@ -51,9 +58,14 @@ additionally inject any other managed beans of type TransformFactory
 or ConverterFactory:
 
 ```
+@Configuration
 @Import(SimpleXmlSerializersConfiguration.class)
-...
-@Autowired PersisterFactory persisterFactory;
+public class MyApplicationConfiguration { ... }
+
+public class MyBean {
+	@Autowired PersisterFactory persisterFactory;
+	...
+}
 ```
 
 ### With Spring Framework for Remoting
