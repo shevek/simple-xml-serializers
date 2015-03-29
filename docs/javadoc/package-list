@@ -1,0 +1,10 @@
+org.anarres.simplexml.factory
+org.anarres.simplexml.serializers
+org.anarres.simplexml.serializers.common
+org.anarres.simplexml.serializers.dhcp4j
+org.anarres.simplexml.serializers.jdk
+org.anarres.simplexml.serializers.spring
+org.anarres.simplexml.serializers.spring.remote
+org.anarres.simplexml.serializers.test
+org.anarres.simplexml.serializers.thrift
+org.compilerworks.common.xml
