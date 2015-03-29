@@ -33,6 +33,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * The main factory class for a {@link Persister}.
+ *
+ * To use this project:
+ * <ol>
+ * <li>Create a PersisterFactory
+ * <li>Add {@link ConverterFactory ConverterFactories} and {@link TransformFactory TransformFactories} to it.
+ * <li>Call newPersister()
+ * </ol>
+ *
+ * Various shortcuts for this process are provided in the case that you are using
+ * ServiceLoader, Spring Framework or other component discovery mechanisms.
  *
  * @author shevek
  */

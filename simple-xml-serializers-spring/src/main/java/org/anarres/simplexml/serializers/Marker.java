@@ -5,8 +5,12 @@
  */
 package org.anarres.simplexml.serializers;
 
+import org.anarres.simplexml.serializers.spring.SimpleXmlSerializersConfiguration;
+
 /**
+ * This class exists only as a marker for the base package which Spring Framework will scan. 
  *
+ * @see SimpleXmlSerializersConfiguration
  * @author shevek
  */
 public interface Marker {
