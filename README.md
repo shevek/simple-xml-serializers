@@ -7,6 +7,8 @@ A set of extra serializers and plugins for
 Usage
 -----
 
+### Simple Usage
+
 The simple case: PersisterFactory detects all ConverterFactory
 and TransformFactory implementations using ServiceLoader and loads
 them.  You may want to use Google's AutoFactory or openide-util's
@@ -29,6 +31,17 @@ persisterFactory.addConverters(...);	// Loads custom code
 Persister persister = persisterFactory.newPersister();
 ```
 
+### For Testing
+
+Depend on the simple-xml-serializers-test module, and use
+```
+MyBean in = ...
+MyBean out = PersisterTestUtils.testSerialization(in);	// Round-trip serialization and deserialization
+assertEquals(in, out);	// Or more appropriate assertions for your system.
+```
+
+### With Spring Framework
+
 If you are using Spring Framework: You can just import
 a prebuilt configuration and then autowire the factory.
 The prebuilt configuration uses @ComponentScan to detect all
@@ -43,9 +56,21 @@ or ConverterFactory:
 @Autowired PersisterFactory persisterFactory;
 ```
 
+### With Spring Framework for Remoting
+
+You might also want to use Spring remoting using SimpleXML; the
+necessary classes are in the simple-xml-serializers-spring-remote
+module.
+
 Documentation
 -------------
 
 The [JavaDoc API](http://shevek.github.io/simple-xml-serializers/docs/javadoc/)
 is available.
+
+Contributions
+--------------
+
+If you want simple-xml serialization for an open source library or
+project, please raise a pull-request or an issue.
 
