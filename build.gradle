@@ -36,6 +36,8 @@ project(':simple-xml-serializers-thrift') {
 		compile 'org.apache.thrift:libthrift:0.9.1'
 
 		testCompile project(':simple-xml-serializers-test')
+		// This is extraordinarily expensive. Is there a ThriftTestObj somewhere else?
+		testCompile 'org.apache.hive:hive-serde:1.1.0'
 	}
 }
 

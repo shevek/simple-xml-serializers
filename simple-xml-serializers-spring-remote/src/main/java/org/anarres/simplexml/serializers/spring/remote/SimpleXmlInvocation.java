@@ -4,6 +4,7 @@
  */
 package org.anarres.simplexml.serializers.spring.remote;
 
+import com.google.common.annotations.VisibleForTesting;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -24,8 +25,11 @@ import org.springframework.remoting.support.RemoteInvocation;
  */
 @Root(name = "call")
 public class SimpleXmlInvocation extends RemoteInvocation {
-    private static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
-    private static final Class<?>[] EMPTY_CLASS_ARRAY = new Class<?>[0];
+
+    @VisibleForTesting
+    /* pp */ static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
+    @VisibleForTesting
+    /* pp */ static final Class<?>[] EMPTY_CLASS_ARRAY = new Class<?>[0];
 
     @Nonnull
     private static Class<?>[] unwrap(@CheckForNull Class<?>[] params) {
