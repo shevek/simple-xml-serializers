@@ -24,7 +24,7 @@ project(':simple-xml-serializers-jdk') {
 		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P1"
 		compile 'com.google.guava:guava:18.0'
 		compile 'com.google.auto.service:auto-service:1.0-rc2'
-		compile 'org.anarres.typeserializer:typeserializer-simplexml:1.0.3'
+		compile 'org.anarres.typeserializer:typeserializer-core:1.0.3'
 
 		testCompile project(':simple-xml-serializers-test')
 	}
