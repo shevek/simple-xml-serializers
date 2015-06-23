@@ -4,6 +4,7 @@
  */
 package org.anarres.simplexml.factory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
@@ -23,13 +24,13 @@ public class ByteArrayHolder implements Holder<byte[]> {
     public ByteArrayHolder() {
     }
 
-    @SuppressWarnings("EI_EXPOSE_REP2")
+    @SuppressFBWarnings("EI_EXPOSE_REP2")
     public ByteArrayHolder(byte[] value) {
         this.value = value;
     }
 
     @Override
-    @SuppressWarnings("EI_EXPOSE_REP")
+    @SuppressFBWarnings("EI_EXPOSE_REP")
     public byte[] getValue() {
         return value;
     }

@@ -4,10 +4,10 @@
  */
 package org.anarres.simplexml.serializers.jdk;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.simpleframework.xml.ElementArray;
 import java.io.IOException;
 import java.util.Arrays;
-import org.anarres.simplexml.serializers.common.SuppressWarnings;
 import org.anarres.simplexml.serializers.test.PersisterTestUtils;
 import org.junit.Test;
 import org.simpleframework.xml.Root;
@@ -29,13 +29,13 @@ public class JavaPersistenceTest {
 
         private final int[] values;
 
-        @SuppressWarnings("EI_EXPOSE_REP2")
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public IntArray(@ElementArray(name = "values") int[] values) {
             this.values = values;
         }
 
         @ElementArray(name = "values")
-        @SuppressWarnings("EI_EXPOSE_REP")
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public int[] getBody() {
             return values;
         }

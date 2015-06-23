@@ -1,21 +1,35 @@
-ext.githubProjectName = rootProject.name
-
 buildscript {
 	apply from: file('gradle/buildscript.gradle'), to: buildscript
 }
-
-apply from: file('gradle/convention.gradle')
-apply from: file('gradle/github.gradle')
-apply from: file('gradle/nexus.gradle')
-apply from: file('gradle/check.gradle')
-apply from: file('gradle/license.gradle')
 
 ext {
 	springVersion = "4.1.5.RELEASE"
 }
 
+apply plugin: 'org.anarres.stdproject'
+stdproject {
+	javadocLink "https://shevek.github.io/simple-xml/docs/javadoc/"
+}
+
 subprojects {
 	group = "org.anarres.simplexml.serializers"
+
+	apply plugin: 'org.anarres.stdmodule'
+	stdmodule {
+		description "Extra serializers and utility plugins for SimpleXML."
+		author id: 'shevek', name: 'Shevek', email: 'github@anarres.org'
+		license 'Apache-2.0'
+	}
+
+	dependencies {
+		compile 'com.google.code.findbugs:annotations:2.0.3'
+		compile 'org.slf4j:slf4j-api:1.7.12'
+	}
+
+	sourceCompatibility = 1.6
+	animalsniffer {
+		signature = "org.codehaus.mojo.signature:java16:+@signature"
+	}
 }
 
 project(':simple-xml-serializers-jdk') {
@@ -24,7 +38,7 @@ project(':simple-xml-serializers-jdk') {
 		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P1"
 		compile 'com.google.guava:guava:18.0'
 		compile 'com.google.auto.service:auto-service:1.0-rc2'
-		compile 'org.anarres.typeserializer:typeserializer-core:1.0.3'
+		compile 'org.anarres.typeserializer:typeserializer-core:1.0.5'
 
 		testCompile project(':simple-xml-serializers-test')
 	}

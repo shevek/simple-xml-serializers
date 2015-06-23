@@ -5,12 +5,12 @@
 package org.anarres.simplexml.serializers.jdk;
 
 import com.google.common.base.Objects;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.anarres.simplexml.serializers.common.SuppressWarnings;
 import org.anarres.simplexml.serializers.test.PersisterTestUtils;
 import org.junit.Test;
 import org.simpleframework.xml.Attribute;
@@ -33,13 +33,13 @@ public class PersisterFactoryTest {
 
         private final String[] body;
 
-        @SuppressWarnings("EI_EXPOSE_REP2")
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public ArrayBody(@ElementArray(name = "body") String[] body) {
             this.body = body;
         }
 
         @ElementArray(name = "body", required = false)
-        @SuppressWarnings("EI_EXPOSE_REP")
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public String[] getBody() {
             return body;
         }

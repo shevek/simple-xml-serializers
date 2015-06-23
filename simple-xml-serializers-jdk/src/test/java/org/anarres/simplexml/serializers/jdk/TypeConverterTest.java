@@ -4,8 +4,8 @@
  */
 package org.anarres.simplexml.serializers.jdk;
 
-import org.anarres.simplexml.serializers.jdk.TypeTransform;
 import com.google.common.base.Charsets;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Type;
@@ -68,7 +68,7 @@ public class TypeConverterTest {
         public final Type[] types;
         public final Class<?>[] classes;
 
-        @SuppressWarnings("EI_EXPOSE_REP2")
+        @SuppressFBWarnings("EI_EXPOSE_REP2")
         public MethodArrayBean(
                 @ElementArray(name = "types", entry = "type", empty = false) Type[] types,
                 @ElementArray(name = "classes", entry = "class", empty = false) Class<?>[] classes) {
@@ -77,13 +77,13 @@ public class TypeConverterTest {
         }
 
         @ElementArray(name = "types", entry = "type", empty = false)
-        @SuppressWarnings("EI_EXPOSE_REP")
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public Type[] getTypes() {
             return types;
         }
 
         @ElementArray(name = "classes", entry = "class", empty = false)
-        @SuppressWarnings("EI_EXPOSE_REP")
+        @SuppressFBWarnings("EI_EXPOSE_REP")
         public Class<?>[] getClasses() {
             return classes;
         }
