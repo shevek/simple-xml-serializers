@@ -34,8 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PersisterUtils {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PersisterUtils.class);
-
+    // private static final Logger LOG = LoggerFactory.getLogger(PersisterUtils.class);
     private PersisterUtils() {
     }
 
@@ -65,7 +64,7 @@ public class PersisterUtils {
     @Nonnull
     public static List<? extends String> split(@Nonnull String in) {
         List<String> out = SPLITTER.splitToList(in);
-        LOG.info(in + " -> " + out);
+        // LOG.info(in + " -> " + out);
         return out;
     }
 
