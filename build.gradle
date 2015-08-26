@@ -44,6 +44,15 @@ project(':simple-xml-serializers-jdk') {
 	}
 }
 
+project(':simple-xml-serializers-guava') {
+	dependencies {
+		compile project(':simple-xml-serializers-jdk')
+		compile 'com.google.guava:guava:18.0'
+
+		testCompile project(':simple-xml-serializers-test')
+	}
+}
+
 project(':simple-xml-serializers-thrift') {
 	dependencies {
 		compile project(':simple-xml-serializers-jdk')

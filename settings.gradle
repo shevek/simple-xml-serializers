@@ -1,5 +1,6 @@
 rootProject.name='simple-xml-serializers'
 include 'simple-xml-serializers-jdk',
+		'simple-xml-serializers-guava',
 		'simple-xml-serializers-thrift',
 		'simple-xml-serializers-dhcp4j',
 		'simple-xml-serializers-spring',
