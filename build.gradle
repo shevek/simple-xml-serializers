@@ -91,3 +91,13 @@ project(':simple-xml-serializers-test') {
 		compile 'junit:junit:4.12'
 	}
 }
+
+project(':simple-xml-serializers-spring-test') {
+	dependencies {
+		compile project(':simple-xml-serializers-spring')
+		compile project(':simple-xml-serializers-spring-remote')
+
+		compile project(':simple-xml-serializers-test')
+		compile "org.springframework:spring-test:$springVersion"
+	}
+}

@@ -4,4 +4,5 @@ include 'simple-xml-serializers-jdk',
 		'simple-xml-serializers-dhcp4j',
 		'simple-xml-serializers-spring',
 		'simple-xml-serializers-spring-remote',
-		'simple-xml-serializers-test'
+		'simple-xml-serializers-test',
+		'simple-xml-serializers-spring-test'
