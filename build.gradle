@@ -35,7 +35,7 @@ subprojects {
 project(':simple-xml-serializers-jdk') {
 	dependencies {
 		// compile 'org.simpleframework:simple-xml:2.7.1'
-		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P1"
+		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P2"
 		compile 'com.google.guava:guava:18.0'
 		compile 'com.google.auto.service:auto-service:1.0-rc2'
 		compile 'org.anarres.typeserializer:typeserializer-core:1.0.7'
