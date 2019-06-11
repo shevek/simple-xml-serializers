@@ -2,6 +2,7 @@ rootProject.name='simple-xml-serializers'
 include 'simple-xml-serializers-jdk',
 		'simple-xml-serializers-thrift',
 		'simple-xml-serializers-dhcp4j',
+		'simple-xml-serializers-jodatime',
 		'simple-xml-serializers-spring',
 		'simple-xml-serializers-spring-remote',
 		'simple-xml-serializers-test'

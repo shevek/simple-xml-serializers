@@ -70,6 +70,15 @@ project(':simple-xml-serializers-dhcp4j') {
 	}
 }
 
+project(':simple-xml-serializers-jodatime') {
+	dependencies {
+		compile project(':simple-xml-serializers-jdk')
+		compile 'joda-time:joda-time:2.9.9'
+
+		testCompile project(':simple-xml-serializers-test')
+	}
+}
+
 project(':simple-xml-serializers-spring') {
 	dependencies {
 		compile project(':simple-xml-serializers-jdk')
