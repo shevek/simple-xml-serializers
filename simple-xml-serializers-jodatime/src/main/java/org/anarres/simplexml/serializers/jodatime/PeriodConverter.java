@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Map;
 import org.anarres.simplexml.serializers.common.ConverterFactory;
 import org.anarres.simplexml.serializers.jdk.AbstractConverter;
-import org.joda.time.Instant;
+import org.joda.time.Period;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.convert.Converter;
 import org.simpleframework.xml.stream.InputNode;
@@ -22,24 +22,24 @@ import org.simpleframework.xml.stream.OutputNode;
  * @author shevek
  */
 @AutoService(ConverterFactory.class)
-public class InstantConverter extends AbstractConverter implements Converter<Instant>, ConverterFactory {
+public class PeriodConverter extends AbstractConverter implements Converter<Period>, ConverterFactory {
 
-    public static final String ATTRIBUTE = "instant";
+    public static final String ATTRIBUTE = "period";
 
     @Override
     public Iterable<? extends Map.Entry<? extends Class<?>, ? extends Converter<?>>> newConverters(Serializer serializer) {
-        return Collections.singleton(Maps.immutableEntry(Instant.class, this));
+        return Collections.singleton(Maps.immutableEntry(Period.class, this));
     }
 
     @Override
-    public Instant read(InputNode node) throws Exception {
+    public Period read(InputNode node) throws Exception {
         String text = getAttribute(node, ATTRIBUTE);
-        return InstantTransform.parse(text);
+        return PeriodTransform.parse(text);
     }
 
     @Override
-    public void write(OutputNode node, Instant value) throws Exception {
-        String text = InstantTransform.format(value);
+    public void write(OutputNode node, Period value) throws Exception {
+        String text = PeriodTransform.format(value);
         node.setAttribute(ATTRIBUTE, text);
     }
 }

@@ -11,6 +11,9 @@ import org.joda.time.Instant;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
+import org.joda.time.Period;
+import org.joda.time.ReadableInstant;
+import org.joda.time.ReadablePeriod;
 import org.junit.Test;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -47,6 +50,21 @@ public class JodaTimeTest {
         @Element
         public Instant i_elem;
 
+        @Attribute
+        public ReadableInstant ri_attr;
+        @Element
+        public ReadableInstant ri_elem;
+
+        @Attribute
+        public Period p_attr;
+        @Element
+        public Period p_elem;
+
+        @Attribute
+        public ReadablePeriod rp_attr;
+        @Element
+        public ReadablePeriod rp_elem;
+
         @Override
         public String toString() {
             return ld_attr + " -- " + ld_elem;
@@ -67,8 +85,16 @@ public class JodaTimeTest {
         obj.lt_elem = new LocalTime().minusHours(20);
         obj.ldt_attr = new LocalDateTime().plusHours(4);
         obj.ldt_elem = new LocalDateTime().minusHours(5);
+
         obj.i_attr = new Instant(43210000);
         obj.i_elem = new Instant(12348712);
+        obj.ri_attr = new Instant(143210000);
+        obj.ri_elem = new Instant(112348712);
+
+        obj.p_attr = new Period(123);
+        obj.p_elem = new Period(456);
+        obj.rp_attr = new Period(789);
+        obj.rp_elem = new Period(654);
 
         testRound(obj.ld_attr);
         testRound(obj.ld_elem);
