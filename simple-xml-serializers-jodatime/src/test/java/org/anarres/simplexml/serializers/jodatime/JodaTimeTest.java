@@ -10,6 +10,7 @@ import org.anarres.simplexml.serializers.test.PersisterTestUtils;
 import org.joda.time.Instant;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.DateTime;
 import org.joda.time.LocalTime;
 import org.joda.time.Period;
 import org.joda.time.ReadableInstant;
@@ -51,6 +52,11 @@ public class JodaTimeTest {
         public Instant i_elem;
 
         @Attribute
+        public DateTime dt_attr;
+        @Element
+        public DateTime dt_elem;
+
+        @Attribute
         public ReadableInstant ri_attr;
         @Element
         public ReadableInstant ri_elem;
@@ -86,6 +92,9 @@ public class JodaTimeTest {
         obj.ldt_attr = new LocalDateTime().plusHours(4);
         obj.ldt_elem = new LocalDateTime().minusHours(5);
 
+        obj.dt_attr = new DateTime().plusHours(15);
+        obj.dt_elem = new DateTime().minusHours(16);
+
         obj.i_attr = new Instant(43210000);
         obj.i_elem = new Instant(12348712);
         obj.ri_attr = new Instant(143210000);
@@ -102,6 +111,8 @@ public class JodaTimeTest {
         testRound(obj.lt_attr);
         testRound(obj.ldt_elem);
         testRound(obj.ldt_elem);
+        testRound(obj.dt_attr);
+        testRound(obj.dt_elem);
         testRound(obj.i_elem);
         testRound(obj.i_elem);
         testRound(obj);
