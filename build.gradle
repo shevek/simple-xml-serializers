@@ -2,12 +2,12 @@ buildscript {
 	repositories {
 		// mavenLocal()
 		mavenCentral()
-		jcenter()
+		gradlePluginPortal()
 		// maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 	}
 
 	dependencies {
-		classpath 'org.anarres.gradle:gradle-stdproject-plugin:1.0.9'
+		classpath 'org.anarres.gradle:gradle-stdproject-plugin:1.0.10'
 	}
 }
 
@@ -31,8 +31,11 @@ subprojects {
 	}
 
 	dependencies {
-		compile 'com.google.code.findbugs:annotations:2.0.3'
-		compile 'org.slf4j:slf4j-api:1.7.12'
+		annotationProcessor 'com.google.auto.service:auto-service:1.0-rc2'
+
+		implementation 'com.google.auto.service:auto-service:1.0-rc2'
+		implementation 'com.google.code.findbugs:annotations:3.0.1'
+		implementation 'org.slf4j:slf4j-api:1.7.12'
 	}
 
 	sourceCompatibility = 1.6
@@ -43,7 +46,6 @@ project(':simple-xml-serializers-jdk') {
 		// compile 'org.simpleframework:simple-xml:2.7.1'
 		compile "org.anarres.mirrors.simpleframework:simple-xml:2.7.1-P2"
 		compile 'com.google.guava:guava:18.0'
-		compile 'com.google.auto.service:auto-service:1.0-rc2'
 		compile 'org.anarres.typeserializer:typeserializer-core:1.0.7'
 
 		testCompile project(':simple-xml-serializers-test')
